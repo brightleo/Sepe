@@ -15,7 +15,7 @@
 
 <div class="container">
 <%@ include file="common/header.jsp" %>
-    <form class="css-form">
+    <form class="form-horizontal">
         <div class="css-form-header">
             <h3><f:message key="order.view_order"/></h3>
         </div>
@@ -26,69 +26,88 @@
 			    <li><a href="#tabs3"><f:message key="order.tabs.tosection"/></a></li> 
 		  	</ul>
 		  	<div id="tabs1">
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="code"><f:message key="order.code"/>:</label>
-		            <input type="text" id="code" name="code" value="${order.code}" class="css-readonly" readonly>
-		            <span class="css-color-red">*</span>
+		            <div>
+		            	<input type="text" id="code" name="code" value="${order.code}" class="css-readonly" readonly>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="name"><f:message key="order.name"/>:</label>
+		            <div>
 		            <input type="text" id="name" name="name" value="${order.name}" class="css-readonly" readonly>
-		            <span class="css-color-red">*</span>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label><f:message key="order.product_type"/>:</label>
+		            <div>
 		            <input type="text" id="productType" name="productType" class="css-readonly" value="${order.productType}-${order.subProductType}" readonly>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="customer"><f:message key="order.customer"/>:</label>
+		            <div>
 		            <input type="text" id="customer" name="customer" value="${order.customer}" class="css-readonly" readonly>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="customerOrderid"><f:message key="order.customerOrderid"/>:</label>
+		            <div>
 		            <input type="text" id="customerOrderid" name="customerOrderid" value="${order.customerOrderid}" class="css-readonly" readonly>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="salesman"><f:message key="order.salesman"/>:</label>
+		            <div>
 		            <input type="text" id="salesman" name="salesman" value="${order.salesman}" class="css-readonly" readonly>
-		            <span class="css-color-red">*</span>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="orderamount"><f:message key="order.orderamount"/>:</label>
+		            <div>
 		            <input type="text" id="orderamount" name="orderamount" value="${order.orderamount}" class="css-readonly" readonly/>
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="orderdate"><f:message key="order.orderdate"/>:</label>
+		            <div>
 		            <input type="text" id="orderdate" name="orderdate" value="${order.orderdate}" class="css-readonly" readonly />
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="deliverydate"><f:message key="order.deliverydate"/>:</label>
-		            <input type="text" id="deliverydate" name="deliverydate" value="${order.deliverydate}" class="css-readonly" readonly />
+		            <div>
+		            	<input type="text" id="deliverydate" name="deliverydate" value="${order.deliverydate}" class="css-readonly" readonly />
+		            </div>
 		        </div>
-		        <div class="css-form-row">
-		            <label for="comment"><f:message key="order.comment"/>:</label>
-		            <span><f:message key="order.status${order.status}"/></span>
+		        <div class="form-group">
+		            <label for="status"><f:message key="order.status"/>:</label>
+		            <div>
+		            	<input type="text" id="status" name="status" value="<f:message key="order.status${order.status}"/>" class="css-readonly" readonly />
+		            </div>
 		        </div>
-		        <div class="css-form-row">
+		        <div class="form-group">
 		            <label for="comment"><f:message key="order.comment"/>:</label>
-		            <textarea id="comment" name="comment" rows="5" class="css-readonly" readonly>${order.comment}</textarea>
+		            <div>
+		            	<textarea id="comment" name="comment" rows="5" class="css-readonly" readonly>${order.comment}</textarea>
+		            </div>
 		        </div>
 		  	</div>
 			<div id="tabs2">
+			<div class="tab tab-size-small sepe-table">
 				<table id="subordertable" class="footable default footable-loaded">
 				    <thead>
 				        <tr>
-				            <td><f:message key="order.shipmentcode"/></td>
-				        	<td><f:message key="order.shipmentdate"/></td>
-				        	<td><f:message key="order.productName"/></td>
-				        	<td><f:message key="order.quantity"/></td>
-				        	<td><f:message key="order.unitprice"/></td>
-				            <td><f:message key="order.billingcode"/></td>
-				            <td><f:message key="order.billingdate"/></td>
-				            <td><f:message key="order.invoicecode"/></td>
-				            <td><f:message key="order.billingProductName"/></td>
-				            <td><f:message key="order.billingQuantity"/></td>
-				            <td><f:message key="order.billingUnitprice"/></td>
+				            <th><f:message key="order.shipmentcode"/></th>
+				        	<th><f:message key="order.shipmentdate"/></th>
+				        	<th><f:message key="order.productName"/></th>
+				        	<th><f:message key="order.quantity"/></th>
+				        	<th><f:message key="order.unitprice"/></th>
+				            <th><f:message key="order.billingcode"/></th>
+				            <th><f:message key="order.billingdate"/></th>
+				            <th><f:message key="order.billingProductName"/></th>
+				            <th><f:message key="order.billingQuantity"/></th>
+				            <th><f:message key="order.billingUnitprice"/></th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -101,7 +120,6 @@
 				            <td><input type="text" id="unitprice${status.index}" name="unitprice${status.index}" value="${subOrder.unitprice}" class="css-readonly" readonly /></td>
 				            <td><input type="text" id="billingcode${status.index}" name="billingcode${status.index}"  value="${subOrder.billingcode}" class="css-readonly" readonly /></td>
 				            <td><input type="text" id="billingdate${status.index}" name="billingdate${status.index}"  value="${subOrder.billingdate}" class="css-readonly" readonly/></td>
-				            <td><input type="text" id="invoicecode${status.index}" name="invoicecode${status.index}"  value="${subOrder.invoicecode}" class="css-readonly" readonly /></td>
 				            <td><input type="text" id="billingProductName${status.index}" name="billingProductName${status.index}"  value="${subOrder.billingProductName}" class="css-readonly" readonly /></td>
 				            <td><input type="text" id="billingQuantity${status.index}" name="billingQuantity${status.index}"  value="${subOrder.billingQuantity}" class="css-readonly" readonly /></td>
 				            <td><input type="text" id="billingUnitprice${status.index}" name="billingUnitprice${status.index}"  value="${subOrder.billingUnitprice}" class="css-readonly" readonly/></td>
@@ -109,6 +127,7 @@
                      </c:forEach>
 				    </tbody>
 				</table>
+				</div>
 				<table style="width:100%">
 					<tr >
 						<td style="width:50%">
@@ -121,12 +140,13 @@
 				</table>
 			</div>
 			<div id="tabs3">
+			<div class="tab sepe-table">
 				<table id="tosectiontable" class="footable default footable-loaded">
 				    <thead>
 				        <tr>
-				            <td><f:message key="order.tosectionDate"/></td>
-				        	<td><f:message key="order.tosectionAmount"/></td>
-				        	<td><f:message key="order.tosectionComment"/></td>
+				            <th><f:message key="order.tosectionDate"/></th>
+				        	<th><f:message key="order.tosectionAmount"/></th>
+				        	<th><f:message key="order.tosectionComment"/></th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -139,6 +159,7 @@
 				         </c:forEach>
 				    </tbody>
 				</table>
+				</div>
 				<table style="width:100%">
 					<tr >
 						<td>
@@ -147,9 +168,11 @@
 					</tr>
 				</table>
 			</div>
-        </div>
-        <div class="css-form-footer">
-            <button type="button" id="back"><f:message key="common.back"/></button>
+	        <div class="form-group">
+	          <div class="col-lg-offset-2 col-lg-10">
+	            <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
+	          </div>
+	        </div>
         </div>
     </form>
 </div>

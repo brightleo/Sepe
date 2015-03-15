@@ -39,7 +39,7 @@
                 <li id="orde"><a href="${BASE}/orders"><f:message key="order"/></a></li>
                 <li id="chart"><a href="${BASE}/charts"><f:message key="order.chart"/></a></li>
                 <li id="custome"><a href="${BASE}/customers"><f:message key="customer"/></a></li>
-                <li id="notic"><a href="${BASE}/notices"><f:message key="notice"/><span id="hasNotice" class="badge">0</span></a></li>
+                <li id="notic"><a href="${BASE}/notices"><f:message key="notice"/><span id="hasNotice" class="badge">&nbsp;</span></a></li>
                 <security:hasRole name="admin">
                   <li id="use"><a href="${BASE}/users"><f:message key="user"/></a></li>
                   <li id="sal"><a href="${BASE}/salesman"><f:message key="salesman"/></a></li>
