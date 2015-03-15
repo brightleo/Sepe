@@ -1,0 +1,79 @@
+
+.sepe-login.container {
+  width: 970px !important;
+ }
+
+.sepe.select {
+	min-width: 100px;
+}
+.sepe .select2-choice {
+	background-color: #52B9E9;
+}
+
+.footable {
+	border-radius: 4px;
+}
+
+.css-width-25 {
+    width: 25px !important;
+}
+.css-blank-10 {
+    display: inline-block;
+    width: 10px;
+}
+
+.css-row {
+    clear: both;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.css-row a {
+    line-height: 30px;
+}
+.css-search {
+    display: table;
+}
+.css-search-button {
+    display: table-cell;
+}
+.css-search-button button {
+    border-left: none;
+    height: 30px;
+}
+.css-left {
+    float: left;
+}
+
+.css-right {
+    float: right;
+}
+.css-text-center {
+    text-align: center;
+}
+.css-button-group {
+    border: 1px solid #CCC;
+    display: inline-block;
+    padding-left: 5px;
+}
+.css-button-group button {
+    border: 1px solid transparent;
+    margin-left: -5px;
+    width: 40px;
+}
+.page-txt {
+	border-radius: 2px;
+}
+*:disabled {
+    background-color: #FFF;
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+.table-pager {
+    margin-top: 10px;
+}
+.sepe-search {
+    width: 450px;
+}
+.sepe-form.navbar-form {
+    padding-left: 0;
+}
