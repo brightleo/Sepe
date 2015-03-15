@@ -8,7 +8,7 @@
     <%@ include file="common/meta.jsp" %>
     <title><f:message key="common.title"/> - <f:message key="order"/></title>
     <%@ include file="common/style.jsp" %>
-<%@ include file="common/script.jsp" %>
+    <%@ include file="common/script.jsp" %>
 </head>
 <body>
 

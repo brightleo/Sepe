@@ -48,7 +48,7 @@ $(function() {
         	$(this).attr("id", id + index);
         	$(this).attr("name", name + index);
         });
-        tr.find("input[readonly='true']").datepicker({ dateFormat: 'yy-mm-dd' });
+        tr.find("input.sepe-date").datepicker({ dateFormat: 'yy-mm-dd' });
 		tr.find("input").blur(function(){
 			countTab2();
 	    });
@@ -68,7 +68,7 @@ $(function() {
         	$(this).attr("id", id + index);
         	$(this).attr("name", name + index);
         });
-        tr.find("input[readonly='true']").datepicker({ dateFormat: 'yy-mm-dd' });
+        tr.find("input.sepe-date").datepicker({ dateFormat: 'yy-mm-dd' });
 		tr.find("input").blur(function(){
 			countTab3();
 	    });
@@ -83,7 +83,7 @@ $(function() {
     		countTab3();
     	}
     });
-    $(".form-group input[id$='date']").datepicker({ dateFormat: 'yy-mm-dd' });
+    $(".form-group input.sepe-date").datepicker({ dateFormat: 'yy-mm-dd' });
     $('#order_create_form').ajaxForm({
         type: 'post',
         url: BASE + '/order/create',

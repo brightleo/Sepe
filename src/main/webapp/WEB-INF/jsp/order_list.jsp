@@ -2,7 +2,8 @@
 <%@ include file="common/global.jsp" %>
 <%@ taglib prefix="security" uri="/security" %>
 <c:set var="orderBeanList" value="${orderBeanPager.recordList}"/>
-<table id="order_table" class="footable default footable-loaded" style="margin-bottom:10px">
+<div class="sepe-table">
+<table id="order_table" class="sepe-table footable default footable-loaded" style="margin-bottom:10px">
     <thead>
         <tr>
             <th id="ordercode"
@@ -40,12 +41,12 @@
             <tr data-id="${order.id}" data-name="${order.name}">
                 <td>${order.code}</td>
                 <td><a href="${BASE}/order/view/${order.id}">${order.name}</a></td>
-                <td>${order.subProductType}</td>
-                <td>${order.salesman}</td>
+                <td class="nonewline">${order.subProductType}</td>
+                <td class="nonewline">${order.salesman}</td>
                 <td>${order.customer}</td>
                 <td>${order.customerOrderid}</td>
                 <td>${order.orderamount}</td>
-                <td>${order.orderdate}</td>
+                <td class="nonewline">${order.orderdate}</td>
                 <td><f:message key="order.status${order.status}"/></td>
                 <td>
                     <security:hasPermission name="order.edit">
@@ -59,7 +60,7 @@
         </c:forEach>
     </tbody>
 </table>
-
+</div>
 <tag:pager id="order_pager" pager="${orderBeanPager}"/>
 <script type="text/javascript">
 $(function() {

@@ -2,7 +2,9 @@
 .sepe-login.container {
   width: 970px !important;
  }
-
+.badge {
+    margin-left: 3px;
+}
 .sepe.select {
 	min-width: 100px;
 }
@@ -76,4 +78,41 @@
 }
 .sepe-form.navbar-form {
     padding-left: 0;
+}
+.sepe-table {
+	overflow-x: scroll;
+	width: 100%;
+}
+.container th,
+.nonewline {
+	white-space:nowrap;
+}
+.sepe-table td {
+	font-size: 14px;
+}
+.tab.sepe-table th {
+	font-size: 12px;
+}
+
+.tab.sepe-table td {
+	font-size: 10px;
+}
+.tab.sepe-table input {
+	border-radius: 4px;
+	width: 100%;
+}
+.tab.tab-size-small.sepe-table input {
+	width: 80px;
+}
+.container .ui-tabs .ui-tabs-panel{
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+}
+.container input.css-readonly, input.css-readonly:focus, textarea.css-readonly, textarea.css-readonly:focus {
+    background: #EEE;
+    border: 1px dashed #CCC;
+    color: #34495e;
+}
+.container .sepe-date.css-readonly {
+	background: white;
 }

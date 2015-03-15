@@ -79,13 +79,13 @@
 		        <div class="form-group">
 		            <label for="orderdate"><f:message key="order.orderdate"/>:</label>
 		            <div>
-		            	<input type="text" id="orderdate" name="orderdate" >
+		            	<input type="text" id="orderdate" name="orderdate" class="sepe-date css-readonly" >
 		            </div>
 		        </div>
 		        <div class="form-group">
 		            <label for="deliverydate"><f:message key="order.deliverydate"/>:</label>
 		            <div>
-		            	<input type="text" id="deliverydate" name="deliverydate" >
+		            	<input type="text" id="deliverydate" name="deliverydate" class="sepe-date css-readonly" >
 		            </div>
 		        </div>
 		        <div class="form-group">
@@ -115,42 +115,42 @@
 		  	</div>
 			<div id="tabs2">
 				<button type="button" id="add"><f:message key="common.add"/></button>
-				<table id="forCopyTable" style="display:none">
-					<tr>
-			            <td><input type="text" id="shipmentcode" name="shipmentcode" /></td>
-			            <td><input type="text" id="shipmentdate" name="shipmentdate" readonly="true" maxlength="12" size="12"/></td>
-			            <td><input type="text" id="productName" name="productName" /></td>
-			            <td><input type="text" id="quantity" name="quantity" /></td>
-			            <td><input type="text" id="unitprice" name="unitprice" /></td>
-			            <td><input type="text" id="billingcode" name="billingcode"  /></td>
-			            <td><input type="text" id="billingdate" name="billingdate"  readonly="true" maxlength="12" size="12"/></td>
-			            <td><input type="text" id="invoicecode" name="invoicecode"  /></td>
-			            <td><input type="text" id="billingProductName" name="billingProductName"  /></td>
-			            <td><input type="text" id="billingQuantity" name="billingQuantity"  /></td>
-			            <td><input type="text" id="billingUnitprice" name="billingUnitprice"  /></td>
-			            <td><button type="button" id="delete"><f:message key="common.delete"/></button></td>
-			        </tr>
-				</table>
-				<table id="subordertable" class="footable default footable-loaded">
-				    <thead>
-				        <tr>
-				            <td><f:message key="order.shipmentcode"/></td>
-				        	<td><f:message key="order.shipmentdate"/></td>
-				        	<td><f:message key="order.productName"/></td>
-				        	<td><f:message key="order.quantity"/></td>
-				        	<td><f:message key="order.unitprice"/></td>
-				            <td><f:message key="order.billingcode"/></td>
-				            <td><f:message key="order.billingdate"/></td>
-				            <td><f:message key="order.invoicecode"/></td>
-				            <td><f:message key="order.billingProductName"/></td>
-				            <td><f:message key="order.billingQuantity"/></td>
-				            <td><f:message key="order.billingUnitprice"/></td>
-				           	<td><f:message key="common.action"/></td>
+				<div class="tab tab-size-small sepe-table">
+					<table id="forCopyTable" style="display:none">
+						<tr>
+				            <td><input type="text" id="shipmentcode" name="shipmentcode" /></td>
+				            <td><input type="text" id="shipmentdate" name="shipmentdate" readonly="true" class="sepe-date css-readonly"/></td>
+				            <td><input type="text" id="productName" name="productName" /></td>
+				            <td><input type="text" id="quantity" name="quantity" /></td>
+				            <td><input type="text" id="unitprice" name="unitprice" /></td>
+				            <td><input type="text" id="billingcode" name="billingcode"  /></td>
+				            <td><input type="text" id="billingdate" name="billingdate"  readonly="true" class="sepe-date css-readonly"/></td>
+				            <td><input type="text" id="billingProductName" name="billingProductName"  /></td>
+				            <td><input type="text" id="billingQuantity" name="billingQuantity"  /></td>
+				            <td><input type="text" id="billingUnitprice" name="billingUnitprice"  /></td>
+				            <td><button type="button" id="delete"><f:message key="common.delete"/></button></td>
 				        </tr>
-				    </thead>
-				    <tbody>
-				    </tbody>
-				</table>
+					</table>
+					<table id="subordertable" class="footable default footable-loaded">
+					    <thead>
+					        <tr>
+					            <th><f:message key="order.shipmentcode"/></th>
+					        	<th><f:message key="order.shipmentdate"/></th>
+					        	<th><f:message key="order.productName"/></th>
+					        	<th><f:message key="order.quantity"/></th>
+					        	<th><f:message key="order.unitprice"/></th>
+					            <th><f:message key="order.billingcode"/></th>
+								<th><f:message key="order.billingdate"/></th>
+					            <th><f:message key="order.billingProductName"/></th>
+					            <th><f:message key="order.billingQuantity"/></th>
+					            <th><f:message key="order.billingUnitprice"/></th>
+					           	<th><f:message key="common.action"/></th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    </tbody>
+					</table>
+				</div>
 				<input type="hidden" id="shipmentamount" name="shipmentamount" />
 				<input type="hidden" id="billingamount" name="billingamount" />
 				<table style="width:100%">
@@ -167,33 +167,35 @@
 			<div id="tabs3">
 				<button type="button" id="addfortab3"><f:message key="common.add"/></button>
 				<table id="forCopyTableFortab3" style="display:none">
-					<tr>
-			            <td><input type="text" id="tosectionDate" name="tosectiondate" readonly="true" maxlength="12" size="12"/></td>
+				<tr>
+			            <td><input type="text" id="tosectionDate" name="tosectiondate" readonly="true" class="sepe-date css-readonly"/></td>
 			            <td><input type="text" id="tosectionAmount" name="tosectionAmount" /></td>
 			            <td><input type="text" id="tosectionComment" name="tosectionComment" /></td>
 			            <td><button type="button" id="deleteFortab3"><f:message key="common.delete"/></button></td>
 			        </tr>
 				</table>
-				<table id="tosectiontable"class="footable default footable-loaded">
-				    <thead>
-				        <tr>
-				            <td><f:message key="order.tosectionDate"/></td>
-				        	<td><f:message key="order.tosectionAmount"/></td>
-				        	<td><f:message key="order.tosectionComment"/></td>
-				           	<td><f:message key="common.action"/></td>
-				        </tr>
-				    </thead>
-				    <tbody>
-				    </tbody>
-				</table>
-				<input type="hidden" id="tosectionamount" name="tosectionamount" />
-				<table style="width:100%">
-					<tr >
-						<td>
-							<f:message key="order.counttosectionamount"/><span id="counttosectionamount">0</span><f:message key="common.yuan"/>
-						</td>
-					</tr>
-				</table>
+				<div class="tab sepe-table">
+					<table id="tosectiontable"class="footable default footable-loaded">
+					    <thead>
+					        <tr>
+					            <th><f:message key="order.tosectionDate"/></th>
+					        	<th><f:message key="order.tosectionAmount"/></th>
+					        	<th><f:message key="order.tosectionComment"/></th>
+					           	<th><f:message key="common.action"/></th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    </tbody>
+					</table>
+					<input type="hidden" id="tosectionamount" name="tosectionamount" />
+					<table style="width:100%">
+						<tr >
+							<td>
+								<f:message key="order.counttosectionamount"/><span id="counttosectionamount">0</span><f:message key="common.yuan"/>
+							</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 	        <div class="form-group">
 	          <div class="col-lg-offset-2 col-lg-10">
