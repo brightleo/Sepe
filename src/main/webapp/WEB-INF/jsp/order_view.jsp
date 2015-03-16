@@ -81,6 +81,12 @@
 		            </div>
 		        </div>
 		        <div class="form-group">
+		            <label for="orderQuantity"><f:message key="order.orderQuantity"/>:</label>
+		            <div>
+		            	<input type="text" id="orderQuantity" name="orderQuantity" value="${order.orderQuantity}" class="css-readonly" readonly >
+		            </div>
+		        </div>
+		        <div class="form-group">
 		            <label for="status"><f:message key="order.status"/>:</label>
 		            <div>
 		            	<input type="text" id="status" name="status" value="<f:message key="order.status${order.status}"/>" class="css-readonly" readonly />

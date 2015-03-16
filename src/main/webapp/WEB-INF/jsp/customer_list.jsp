@@ -9,6 +9,7 @@
         	<th><f:message key="customer.username"/></th>
         	<th><f:message key="customer.usertel"/></th>
         	<th><f:message key="customer.comment"/></th>
+            	<th class="css-width-25"><f:message key="common.action"/></th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,11 @@
                 </td>
                 <td>
                     ${customer.comment}
+                </td>
+                <td>
+                    <security:hasPermission name="order.delete">
+                        <a href="#" class="ext-customer-delete"><span class="sepe-icon fui-cross-circle"></span></a>
+                    </security:hasPermission>
                 </td>
             </tr>
         </c:forEach>

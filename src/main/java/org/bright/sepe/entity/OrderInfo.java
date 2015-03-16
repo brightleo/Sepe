@@ -28,6 +28,8 @@ public class OrderInfo {
 	public String paymenttype;
 	/** 合同金额 **/
     public String orderamount;
+	/** 合同数量 **/
+	public String orderQuantity;
 	/** 发货金额 **/
     public String shipmentamount;
 	/** 开票金额 **/
@@ -228,6 +230,20 @@ public class OrderInfo {
 	 */
 	public void setOrderamount(String orderamount) {
 		this.orderamount = orderamount;
+	}
+
+	/**
+	 * @return the orderQuantity
+	 */
+	public String getOrderQuantity() {
+		return orderQuantity;
+	}
+
+	/**
+	 * @param orderQuantity the orderQuantity to set
+	 */
+	public void setOrderQuantity(String orderQuantity) {
+		this.orderQuantity = orderQuantity;
 	}
 
 	/**

@@ -16,7 +16,6 @@
 <div class="container">
 <%@ include file="common/header.jsp" %>
     <form id="notice_edit_form" class="form-horizontal">
-    <input type="hidden" name="status" value="1" />
         <div class="css-form-header">
             <h3><f:message key="notice.edit_notice"/></h3>
         </div>
@@ -30,6 +29,17 @@
             <label for="noticeDate"><f:message key="notice.date"/>:</label>
             <div>
                 <input type="text" id="noticeDate" name="noticeDate" value="${notice.noticeDate}" class="ext-required" readonly/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status"><f:message key="notice.status"/>:</label>
+            <div>
+                <label class="radio" for="status1">
+                    <tag:status index="1" value="${notice.status}" /><f:message key="notice.status.1"/>
+                </label>
+                <label class="radio" for="status2">
+                    <tag:status index="2" value="${notice.status}" /><f:message key="notice.status.2"/>
+                </label>
             </div>
         </div>
         <div class="form-group">

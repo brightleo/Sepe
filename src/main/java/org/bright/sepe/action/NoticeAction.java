@@ -17,7 +17,6 @@ import org.smart4j.framework.mvc.bean.View;
 import org.smart4j.plugin.security.annotation.HasRoles;
 
 @Action
-@HasRoles("admin")
 public class NoticeAction {
 
     @Inject
@@ -52,11 +51,11 @@ public class NoticeAction {
     public View create() {
         return new View("notice_create.jsp");
     }
-    
     @HasRoles("admin")
     @Request.Post("/notice")
     public Result save(Params params) {
         Map<String, Object> fieldMap = params.getFieldMap();
+        fieldMap.put("status", "1");
         boolean result = noticeService.saveNotice(fieldMap);
         return new Result(result);
     }
@@ -74,7 +73,8 @@ public class NoticeAction {
         boolean result = noticeService.updateNotice(id, fieldMap);
         return new Result(result);
     }
-    @Request.Delete("/notice/{id}")
+
+    @Request.Delete("/notice/delete/{id}")
     public Result delete(long id) {
         boolean result = noticeService.deleteNotice(id);
         return new Result(result);

@@ -104,6 +104,7 @@ CREATE TABLE `order_info` (
   `code` varchar(50) NOT NULL,
   `name` varchar(100),
   `product_type` varchar(50),
+  `order_quantity` bigint(20),
   `sub_product_type` varchar(50),
   `customer` varchar(20),
   `customer_orderid` varchar(50),

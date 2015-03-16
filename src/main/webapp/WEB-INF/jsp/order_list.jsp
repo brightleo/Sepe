@@ -15,7 +15,7 @@
                         class="footable-sorted"
                     </c:otherwise>
                 </c:choose>
-            data-sort-initial="true"><f:message key="order.code"/><span class="footable-sort-indicator"></span></th>
+            data-sort-initial="true"><a href="#" class="table_a"><f:message key="order.code"/></a><span class="footable-sort-indicator"></span></th>
             <th><f:message key="order.name"/></th>
             <th><f:message key="order.product_type"/></th>
             <th><f:message key="order.salesman"/></th>
@@ -23,6 +23,7 @@
             <th><f:message key="order.customerOrderid"/></th>
             <th><f:message key="order.orderamount"/></th>
             <th><f:message key="order.orderdate"/></th>
+            <th><f:message key="order.orderQuantity"/></th>
             <th>
                 <select id="orderStatus" name="orderStatus" data-toggle="select" class="sepe form-control select select-primary">
                     <option value="" ${status == '' ? 'selected' : ''}><f:message key="order.status"/></option>
@@ -47,13 +48,14 @@
                 <td>${order.customerOrderid}</td>
                 <td>${order.orderamount}</td>
                 <td class="nonewline">${order.orderdate}</td>
+                <td>${order.orderQuantity}</td>
                 <td><f:message key="order.status${order.status}"/></td>
                 <td>
                     <security:hasPermission name="order.edit">
-                        <a href="${BASE}/order/edit/${order.id}"><f:message key="common.edit"/></a>
+                        <a href="${BASE}/order/edit/${order.id}"><span class="sepe-icon fui-new"></span></a>
                     </security:hasPermission>
                     <security:hasPermission name="order.delete">
-                        <a href="#" class="ext-order-delete"><f:message key="common.delete"/></a>
+                        <a href="#" class="ext-order-delete"><span class="sepe-icon fui-cross-circle"></span></a>
                     </security:hasPermission>
                 </td>
             </tr>
@@ -64,7 +66,7 @@
 <tag:pager id="order_pager" pager="${orderBeanPager}"/>
 <script type="text/javascript">
 $(function() {
-    $("#ordercode").click(function() {
+    $("#ordercode a.table_a").click(function() {
         var $orderby = $('#order_search_form #orderby');
         if ($orderby.val() === 'asc'){
             $orderby.val('desc');

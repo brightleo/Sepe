@@ -54,9 +54,9 @@
 		            <input type="hidden" id="customerNames" name="customerNames" value='${customerNames}' />
 		        </div>
 		        <div class="form-group">
-		            <label for="customerOrderid"><f:message key="order.customerOrderid"/><span class="css-color-red">*</span>:</label>
+		            <label for="customerOrderid"><f:message key="order.customerOrderid"/></span>:</label>
 		            <div>
-		            	<input type="text" id="customerOrderid" name="customerOrderid" class="ext-required">
+		            	<input type="text" id="customerOrderid" name="customerOrderid">
 		            </div>
 		        </div>
 		        <div class="form-group">
@@ -86,6 +86,12 @@
 		            <label for="deliverydate"><f:message key="order.deliverydate"/>:</label>
 		            <div>
 		            	<input type="text" id="deliverydate" name="deliverydate" class="sepe-date css-readonly" >
+		            </div>
+		        </div>
+		        <div class="form-group">
+		            <label for="orderQuantity"><f:message key="order.orderQuantity"/>:</label>
+		            <div>
+		            	<input type="text" id="orderQuantity" name="orderQuantity">
 		            </div>
 		        </div>
 		        <div class="form-group">
@@ -187,6 +193,7 @@
 					    <tbody>
 					    </tbody>
 					</table>
+				</div>
 					<input type="hidden" id="tosectionamount" name="tosectionamount" />
 					<table style="width:100%">
 						<tr >
@@ -195,7 +202,6 @@
 							</td>
 						</tr>
 					</table>
-				</div>
 			</div>
 	        <div class="form-group">
 	          <div class="col-lg-offset-2 col-lg-10">

@@ -164,6 +164,13 @@ var Smart = {
 };
 
 $(function() {
+    // 渲染input控件
+    var formFileds = $("form.form-horizontal div.form-group");
+    formFileds.children("label").addClass("col-sm-2 control-label");
+    formFileds.children("div").addClass("col-sm-10");
+    formFileds.find("input,textarea").addClass("form-control");
+    $("form.form-horizontal").show();
+
     // 忽略空链接
     $('a[href="#"]').click(function() {
         return false;
@@ -220,11 +227,6 @@ $(function() {
             $(this).addClass("active");
         }
     });
-    //
-    var formFileds = $("form.form-horizontal div.form-group");
-    formFileds.children("label").addClass("col-sm-2 control-label");
-    formFileds.children("div").addClass("col-sm-10");
-    formFileds.find("input,textarea").addClass("form-control");
 
     // Custom Selects
     if ($('[data-toggle="select"]').length) {

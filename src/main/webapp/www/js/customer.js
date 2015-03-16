@@ -30,11 +30,11 @@ $(function() {
     $('.ext-customer-delete').click(function() {
         var $tr = $(this).closest('tr');
         var name = $tr.data('name');
+        var customerId = $tr.data('id');
         if (confirm(Smart.i18n('customer.delete_confirm', name))) {
-            var url = $(this).attr('href');
             $.ajax({
                 type: 'delete',
-                url: url,
+                url: BASE + '/customer/' + customerId,
                 dataType: 'json',
                 success: function(result) {
                     if (result.success) {

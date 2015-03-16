@@ -26,7 +26,7 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public List<Notice> findNoticeList() {
-		String condition = "notice_date <= ? and status = '1'";
+		String condition = "notice_date <= ?";
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		String date = format.format(new Date());
 		return DataSet.selectListWithConditionAndSort(Notice.class, condition, sort_, date);
@@ -78,7 +78,7 @@ public class NoticeServiceImpl implements NoticeService {
 		Notice notice = this.findNotice(id);
 		notice.setNoticeDate(String.valueOf(fieldMap.get("noticeDate")));
 		notice.setTitle(String.valueOf(fieldMap.get("title")));
-		notice.setStatus(String.valueOf("1"));
+		notice.setStatus(String.valueOf(fieldMap.get("status")));
 		notice.setComment(String.valueOf(fieldMap.get("comment")));
 		return DataSet.update(notice);
 	}

@@ -30,8 +30,8 @@
                     </c:forEach>
                 </td>
                 <td>
-                    <a href="${BASE}/user/${user.id}"><f:message key="common.edit"/></a>
-                    <a href="${BASE}/user/${user.id}" class="ext-user-delete"><f:message key="common.delete"/></a>
+                    <a href="${BASE}/user/${user.id}"><span class="sepe-icon fui-new"></a>
+                    <a href="${BASE}/user/${user.id}" class="ext-user-delete"><span class="sepe-icon fui-cross-circle"></a>
                 </td>
             </tr>
         </c:forEach>

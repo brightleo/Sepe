@@ -30,7 +30,7 @@
                                       <button type="submit" id="search" class="btn"><span class="fui-search"></span></button>
                                     </span>
                                 </div>
-                                <input type="hidden" id="orderby" name="orderby" value="asc"/>
+                                <input type="hidden" id="orderby" name="orderby" value="desc"/>
                                 <input type="hidden" id="status" name="status" value=""/>
                             </div>
                         </form>

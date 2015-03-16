@@ -20,7 +20,7 @@
     <a class="navbar-brand" href="#"><f:message key="common.title"/></a>
   </div>
   <div id="bs-example-navbar-collapse-15" class="collapse navbar-collapse">
-    <p class="navbar-text navbar-right"><f:message key="common.user"/>: <security:principal/></p>
+    <p class="navbar-text navbar-right"><f:message key="common.user"/>: <security:principal/><a id="showNotice" href="javascript:void(0);"><span id="hasNotice"/></a></p>
     <button class="btn btn-default navbar-btn btn-xs" type="button" id="logout"><f:message key="common.logout"/></button>
 </nav>
 <div class="row">
@@ -36,14 +36,14 @@
         </div>
         <div class="collapse navbar-collapse navbar-collapse-01">
               <ul id="menu" class="nav navbar-nav navbar-left">
-                <li id="orde"><a href="${BASE}/orders"><f:message key="order"/></a></li>
-                <li id="chart"><a href="${BASE}/charts"><f:message key="order.chart"/></a></li>
-                <li id="custome"><a href="${BASE}/customers"><f:message key="customer"/></a></li>
-                <li id="notic"><a href="${BASE}/notices"><f:message key="notice"/><span id="hasNotice" class="badge">&nbsp;</span></a></li>
+                <li id="orde"><a href="${BASE}/orders"><f:message key="menu.order"/></a></li>
+                <li id="chart"><a href="${BASE}/charts"><f:message key="menu.chart"/></a></li>
+                <li id="custome"><a href="${BASE}/customers"><f:message key="menu.customer"/></a></li>
                 <security:hasRole name="admin">
-                  <li id="use"><a href="${BASE}/users"><f:message key="user"/></a></li>
-                  <li id="sal"><a href="${BASE}/salesman"><f:message key="salesman"/></a></li>
-                  <li id="produc"><a href="${BASE}/productTypes"><f:message key="producttype"/></a></li>
+                  <li id="use"><a href="${BASE}/users"><f:message key="menu.user"/></a></li>
+                  <li id="sal"><a href="${BASE}/salesman"><f:message key="menu.sales"/></a></li>
+                  <li id="produc"><a href="${BASE}/productTypes"><f:message key="menu.product"/></a></li>
+                 <li id="notic"><a href="${BASE}/notices"><f:message key="menu.notice"/></a></li>
                 </security:hasRole>
               </ul>
        </div><!--/.nav -->

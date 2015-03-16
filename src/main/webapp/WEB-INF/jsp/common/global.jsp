@@ -5,4 +5,4 @@
 
 <c:set var="BASE" value="${pageContext.request.contextPath}"/>
 
-<f:setBundle basename="i18n.i18n_${system_language}"/>
+<f:setBundle basename="i18n.i18n_zh_CN"/>

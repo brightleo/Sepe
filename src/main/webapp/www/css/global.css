@@ -19,6 +19,9 @@
 .css-width-25 {
     width: 25px !important;
 }
+.css-width-75 {
+    width: 75px !important;
+}
 .css-blank-10 {
     display: inline-block;
     width: 10px;
@@ -98,7 +101,7 @@
 	font-size: 10px;
 }
 .tab.sepe-table input {
-	border-radius: 4px;
+	border-radius: 2px;
 	width: 100%;
 }
 .tab.tab-size-small.sepe-table input {
@@ -115,4 +118,32 @@
 }
 .container .sepe-date.css-readonly {
 	background: white;
+}
+.footable .sepe-icon {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.navbar-inverse .fui-mail {
+    margin-left: 10px;
+    color: greenyellow;
+}
+.sepe-readed.fui-mail {
+    color: #fff;
+}
+.form-group .radio {
+    display: inline-block;
+    margin-right: 6px;
+}
+
+form.form-horizontal {
+    display: none;
+}
+.sepe-table a.table_a {
+    color: #fff;
+}
+
+.jGrowl-notification.sepe,
+.jGrowl-closer {
+    background-color: black;
+    font-size: 1.25em;
 }
