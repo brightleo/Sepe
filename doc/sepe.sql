@@ -22,6 +22,7 @@ CREATE TABLE `notice` (
    `id` bigint(20) NOT NULL AUTO_INCREMENT,
    `notice_date` date,
    `title` varchar(50),
+   `type` varchar(1),
    `status` varchar(1),
    `comment` text,
   PRIMARY KEY (`id`)

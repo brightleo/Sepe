@@ -8,6 +8,8 @@ public class Notice {
 	private long id;
 
 	private String title;
+
+	private String type;
 	
 	private String status;
 
@@ -41,6 +43,20 @@ public class Notice {
 	 */
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	/**

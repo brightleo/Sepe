@@ -8,6 +8,7 @@
     <%@ include file="common/meta.jsp" %>
     <title><f:message key="common.title"/> - <f:message key="notice"/></title>
     <%@ include file="common/style.jsp" %>
+    <%@ include file="common/script.jsp" %>
 </head>
 <body>
 
@@ -25,6 +26,7 @@
                             <div class="form-group sepe-search">
                                 <div class = "input-group">
                                     <input type="text" name="param" class="form-control" type="search">
+                                    <input type="hidden" name="type" id="type" class="form-control" value="">
                                     <span class="input-group-btn">
                                       <button type="submit" id="search" class="btn"><span class="fui-search"></span></button>
                                     </span>
@@ -45,9 +47,6 @@
 </div>
 
 <%@ include file="common/footer.jsp" %>
-
-<%@ include file="common/script.jsp" %>
-
 <script type="text/javascript" src="${BASE}/www/js/notice.js"></script>
 
 </body>

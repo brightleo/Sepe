@@ -28,7 +28,24 @@
         <div class="form-group">
             <label for="noticeDate"><f:message key="notice.date"/>:</label>
             <div>
-                <input type="text" id="noticeDate" name="noticeDate" value="${notice.noticeDate}" class="ext-required" readonly/>
+                <input type="text" id="noticeDate" name="noticeDate" value="${notice.noticeDate}" class="ext-required css-readonly" readonly/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type"><f:message key="notice.type"/>:</label>
+            <div>
+                <label class="radio" for="type1">
+                    <tag:types index="1" value="${notice.type}" /><f:message key="notice.type.1"/>
+                </label>
+                <label class="radio" for="type2">
+                    <tag:types index="2" value="${notice.type}" /><f:message key="notice.type.2"/>
+                </label>
+                <label class="radio" for="type3">
+                    <tag:types index="3" value="${notice.type}" /><f:message key="notice.type.3"/>
+                </label>
+                <label class="radio" for="type4">
+                    <tag:types index="4" value="${notice.type}" /><f:message key="notice.type.4"/>
+                </label>
             </div>
         </div>
         <div class="form-group">

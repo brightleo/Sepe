@@ -22,7 +22,7 @@ public class NoticeAction {
     @Inject
     private NoticeService noticeService;
     
-    @Request.Get("/un_read_notices")
+    @Request.Post("/un_read_notices")
     public Result getUnReadNotices() {
     	Result result = new Result(true);
     	result.setData(noticeService.getNotices());
@@ -33,18 +33,17 @@ public class NoticeAction {
     public View index() {
         int pageNumber = 1;
         int pageSize = Tool.getPageSize("notice_pager");
-        String name = "";
-        Pager<Notice> noticePager = noticeService.getNoticePager(pageNumber, pageSize, name);
+        Pager<Notice> noticePager = noticeService.getNoticePager(pageNumber, pageSize, "", "");
         return new View("notice.jsp").data("noticePager", noticePager);
     }
     @Request.Post("/notice/search")
     public View search(Params params) {
         int pageNumber = params.getInt(Constant.PAGE_NUMBER);
         int pageSize = params.getInt(Constant.PAGE_SIZE);
-        String name = params.getString("param");
-        Pager<Notice> noticePager = noticeService.getNoticePager(pageNumber, pageSize, name);
-        return new View("notice_list.jsp")
-            .data("noticePager", noticePager);
+        String param = params.getString("param");
+        String type = params.getString("type");
+        Pager<Notice> noticePager = noticeService.getNoticePager(pageNumber, pageSize, param, type);
+        return new View("notice_list.jsp").data("noticePager", noticePager).data("type",type);
     }
 
     @Request.Get("/notice")

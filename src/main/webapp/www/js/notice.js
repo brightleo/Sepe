@@ -24,6 +24,9 @@ $(function() {
         dataType: 'html',
         success: function(html) {
             $('#notice_list').html(html);
+            if ($('#notice_list [data-toggle="select"]').length) {
+              $('#notice_list [data-toggle="select"]').select2();
+            }
         }
     });
 

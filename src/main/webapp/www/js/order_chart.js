@@ -82,7 +82,7 @@ $(function() {
 		}
 	}
 	//
-	function loadChartTime(){
+	function loadChartTime() {
 		var nowDate= new Date();
 		var startYear=nowDate.getFullYear()-10;//起始年份
 		var endYear=nowDate.getFullYear();//结束年份 
@@ -98,22 +98,24 @@ $(function() {
 		for (var i = 1; i <= 12; i++) {
 			objM.options.add(new Option(i,i));
 		}
+		$("#chartTypeYear, #chartTypeM").attr("data-toggle","select").select2();
 	}
 	loadChartTime();
+
 	$("#chartType").change(function(){
 		var type = $(this).val();
 		if(type === '1') {
-			$("span[id^='c_month']").show();
+			$("label[id^='c_month']").show();
 			$("#c_amount").hide();
 			$("#c_salesman").hide();
 		} else if(type === '2') {
 			$("#c_amount").show();
-			$("span[id^='c_month']").show();
+			$("label[id^='c_month']").show();
 			$("#c_salesman").hide();
 		} else {
 			$("#chart_time_y").click();
 			$("#c_salesman").show();
-			$("span[id^='c_month']").hide();
+			$("label[id^='c_month']").hide();
 			$("#c_amount").hide();
 		}
 

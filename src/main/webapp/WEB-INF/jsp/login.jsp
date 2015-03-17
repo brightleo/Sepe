@@ -18,18 +18,17 @@
   <div class="login">
     <div class="login-screen">
       <div class="login-icon">
-        <img src="img/login/icon.png" alt="Welcome to Mail App" />
-        <h4><small>销售管理</small></h4>
+        <img src="${BASE}/www/img/logo.gif" />
       </div>
 
       <div class="login-form">
         <form id="login_form">
           <div class="form-group">
-            <input type="text" class="form-control login-field" value="admin" name="username" id="username" placeholder="Enter your name" />
+            <input type="text" class="form-control login-field" name="username" id="username" placeholder="Enter your name" />
             <label class="login-field-icon fui-user" for="username"></label>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control login-field" value="admin" id="password" name="password" placeholder="Password"/>
+            <input type="password" class="form-control login-field" id="password" name="password" placeholder="Password"/>
             <label class="login-field-icon fui-lock" for="password"></label>
           </div>
           <a class="btn btn-primary btn-lg btn-block" id="loginBtn"><f:message key="login"/></a>

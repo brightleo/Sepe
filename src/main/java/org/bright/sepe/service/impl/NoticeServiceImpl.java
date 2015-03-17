@@ -33,8 +33,8 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public Pager<Notice> getNoticePager(int pageNumber, int pageSize, String param) {
-		String condition = "notice_date like ? or title like ? or comment like ?";
+	public Pager<Notice> getNoticePager(int pageNumber, int pageSize, String param, String type) {
+		String condition = "(notice_date like ? or title like ? or comment like ?) and type like ?";
 		Boolean hasDate = true;
 		
 		try {
@@ -49,13 +49,13 @@ public class NoticeServiceImpl implements NoticeService {
 		long count = 0;
 		List<Notice> noticeList = null;
 		if (hasDate) {
-			Object[] params = { "%" + param + "%", "%" + param + "%", "%" + param + "%" };
+			Object[] params = { "%" + param + "%", "%" + param + "%", "%" + param + "%" , "%" + type + "%"};
 			count = DataSet.selectCount(Notice.class, condition, params);
 			noticeList = DataSet.selectListForPager(pageNumber,
 					pageSize, Notice.class, condition, sort_, params);
 		} else {
-			condition = "title like ? or comment like ?";
-			Object[] params = { "%" + param + "%", "%" + param + "%"};
+			condition = "(title like ? or comment like ?) and type like ?";
+			Object[] params = { "%" + param + "%", "%" + param + "%", "%" + type + "%"};
 			count = DataSet.selectCount(Notice.class, condition, params);
 			noticeList = DataSet.selectListForPager(pageNumber,
 					pageSize, Notice.class, condition, sort_, params);
@@ -79,6 +79,7 @@ public class NoticeServiceImpl implements NoticeService {
 		notice.setNoticeDate(String.valueOf(fieldMap.get("noticeDate")));
 		notice.setTitle(String.valueOf(fieldMap.get("title")));
 		notice.setStatus(String.valueOf(fieldMap.get("status")));
+		notice.setType(String.valueOf(fieldMap.get("type")));
 		notice.setComment(String.valueOf(fieldMap.get("comment")));
 		return DataSet.update(notice);
 	}

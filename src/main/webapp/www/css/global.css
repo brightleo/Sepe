@@ -6,7 +6,7 @@
     margin-left: 3px;
 }
 .sepe.select {
-	min-width: 100px;
+	min-width: 50px;
 }
 .sepe .select2-choice {
 	background-color: #52B9E9;
@@ -15,12 +15,19 @@
 .footable {
 	border-radius: 4px;
 }
-
 .css-width-25 {
     width: 25px !important;
 }
 .css-width-75 {
     width: 75px !important;
+}
+
+.css-width-100 {
+    width: 100px !important;
+}
+
+.css-width-200 {
+    width: 200px !important;
 }
 .css-blank-10 {
     display: inline-block;
@@ -114,7 +121,8 @@
 .container input.css-readonly, input.css-readonly:focus, textarea.css-readonly, textarea.css-readonly:focus {
     background: #EEE;
     border: 1px dashed #CCC;
-    color: #34495e;
+    color: black;
+
 }
 .container .sepe-date.css-readonly {
 	background: white;
@@ -146,4 +154,22 @@ form.form-horizontal {
 .jGrowl-closer {
     background-color: black;
     font-size: 1.25em;
+}
+
+.jqplot-table-legend.jqplot-table-legend-swatch {
+    padding-left: 0.75em;
+}
+.jqplot-table-legend.jqplot-table-legend-label {
+    padding-left: 0.5em;
+    padding-right: 0.75em
+}
+.select2-with-searchbox.select2-drop-active {
+    min-width: 0px;
+}
+
+.sepe-chart {
+    height:600px;
+    width:900px;
+    margin-left: auto;
+    margin-right: auto;
 }

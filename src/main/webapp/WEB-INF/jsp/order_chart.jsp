@@ -14,47 +14,57 @@
 
 <div class="container">
 <%@ include file="common/header.jsp" %>
-	<form id="order_chart_form" class="css-form">
+	<form id="order_chart_form" class="form-horizontal">
         <div class="css-form-header">
             <h3><f:message key="order.chart"/></h3>
         </div>
-		<div class="css-form-row">
+		<div class="form-group">
 			<label for="chartType"><f:message key="order.chart.type"/>:</label>
-		    <select id="chartType" name="chartType">
-		     	<option value="1"><f:message key="order.chart.type.pie"/></option>
-		     	<option value="2"><f:message key="order.chart.type.bar"/></option>
-		     	<option value="3"><f:message key="order.chart.type.line"/></option>
-		    </select>
+			<div class="col-xs-3">
+		    	<select id="chartType" name="chartType" data-toggle="select" class="form-control select select-default">
+			     	<option value="1"><f:message key="order.chart.type.pie"/></option>
+			     	<option value="2"><f:message key="order.chart.type.bar"/></option>
+			     	<option value="3"><f:message key="order.chart.type.line"/></option>
+			    </select>
+			</div>
 		</div>
-		<div class="css-form-row">
-		<label><f:message key="order.chart.filter"/>:</label>
-		  <span>
-		  	<input type="radio" id="chart_time_y" name="chart_time" value="0" checked/><f:message key="order.chart.type.y"/>
-		  </span>
-		  <span id="c_month">
-		  	<input type="radio" id="chart_time_m" name="chart_time" value="1" /><f:message key="order.chart.type.m"/>
-		  </span>
-		  <span>
-			  <select id="chartTypeYear" name="chartTypeYear"></select><f:message key="order.chart.year"/>
-		  </span>
-		  <span id="c_month_s">
-		  	<select id="chartTypeM" name="chartTypeM"></select><f:message key="order.chart.month"/>
-		  </span>
-		  <span id="c_amount" style="display:none;">
-		  	<input type="radio" id="amount_type_o" name="amount_type" value="0" checked/><f:message key="order.chart.type.bar.order"/>
-		  	<input type="radio" id="amount_type_b" name="amount_type" value="1" /><f:message key="order.chart.type.bar.billing"/>
-		  </span>
-		  <span id="c_salesman" style="display:none;margin-left:15px">
-			  <f:message key="order.salesman"/>:
-			  <select id="salesman" name="salesman">
-			  	<c:forEach var="salesmanInfo" items="${salesmanList}">
-			    	<option value="${salesmanInfo.name}">${salesmanInfo.name}</option>
-			    </c:forEach>
-			  </select>
-		  </span>
-		  <button id="doChart"><f:message key="order.chart.do"/></button>
+		<div class="form-group">
+			<label><f:message key="order.chart.filter"/>:</label>
+			<div class="row">
+				<div class="col-xs-3">
+					<label id="c_year" for="chart_time_y" class="radio">
+						<input type="radio" id="chart_time_y" name="chart_time" value="0" data-toggle="radio" checked/><f:message key="order.chart.type.y"/>
+					</label>
+					<label id="c_month" for="chart_time_m" class="radio">
+						<input type="radio" id="chart_time_m" name="chart_time" value="1" data-toggle="radio"/><f:message key="order.chart.type.m"/>
+					</label>
+				</div>
+				<div class="col-xs-4">
+					<select id="chartTypeYear" name="chartTypeYear" class="form-control sepe css-width-100 select select-default"></select><span class="time-padding"><f:message key="order.chart.year"/></span>
+					<label id="c_month_s">
+					<select id="chartTypeM" name="chartTypeM"   class="form-control sepe css-width-75 select select-default"></select><span class="time-padding"><f:message key="order.chart.month"/></span>
+					</label>
+				</div>
+				<div id="c_amount" style="display:none;" class="col-xs-3">
+				  	<label for="amount_type_o" class="radio">
+				  		<input type="radio" id="amount_type_o" name="amount_type" data-toggle="radio" value="0" checked/><f:message key="order.chart.type.bar.order"/>
+				  	</label>
+				  	<label for="amount_type_b" class="radio">
+				  		<input type="radio" id="amount_type_b" name="amount_type" data-toggle="radio" value="1" /><f:message key="order.chart.type.bar.billing"/>
+				  	</label>
+				</div>
+			  <div id="c_salesman" style="display:none;" class="col-xs-5">
+			  	<label><f:message key="order.salesman"/>:</label>
+				  <select id="salesman" name="salesman" data-toggle="select" class="form-control sepe css-width-200 select select-default">
+				  	<c:forEach var="salesmanInfo" items="${salesmanList}">
+				    	<option value="${salesmanInfo.name}">${salesmanInfo.name}</option>
+				    </c:forEach>
+				  </select>
+			  </div>
+			</div>
 		</div>
-        <div id="orderChart" style="height:600px; width:800px;"></div>
+		<div class="form-group"><button id="doChart" class="btn"><f:message key="order.chart.do"/></button></div>
+        <div id="orderChart" class="sepe-chart"></div>
 	</form>
 </div>
 <link rel="stylesheet" href="${BASE}/www/lib/jqplot/css/jquery.jqplot.min.css">

@@ -10,7 +10,7 @@ public interface NoticeService {
 
 	List<Notice> findNoticeList();
 
-	Pager<Notice> getNoticePager(int pageNumber, int pageSize, String name);
+	Pager<Notice> getNoticePager(int pageNumber, int pageSize, String param, String type);
 
 	boolean saveNotice(Map<String, Object> fieldMap);
 
