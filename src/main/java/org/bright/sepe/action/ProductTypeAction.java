@@ -14,12 +14,10 @@ import org.smart4j.framework.mvc.bean.View;
 import org.smart4j.plugin.security.annotation.HasRoles;
 
 @Action
-@HasRoles("admin")
 public class ProductTypeAction {
 
     @Inject
     private OrderService orderService;
-    @HasRoles("admin")
     @Request.Get("/productTypes")
     public View index() {
     	List<ProductTypeBean> beanList = orderService.getProductTypeList();

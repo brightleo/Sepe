@@ -67,7 +67,9 @@
         </div>
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
-            <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+            <security:hasPermission name="order.edit">
+                    <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+            </security:hasPermission>
             <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
           </div>
         </div>

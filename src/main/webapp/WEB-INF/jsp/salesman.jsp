@@ -41,8 +41,10 @@
 			</table>
 		</div>
 		<div class="form-group">
-            <button type="button" id="add" class="btn btn-default"><f:message key="common.add"/></button>
-            <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+            <security:hasPermission name="order.edit">
+            	<button type="button" id="add" class="btn btn-default"><f:message key="common.add"/></button>
+                <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+            </security:hasPermission>
         </div>
     </form>
 </div>

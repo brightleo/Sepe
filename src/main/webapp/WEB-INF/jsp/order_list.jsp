@@ -26,7 +26,7 @@
             <th><f:message key="order.orderQuantity"/></th>
             <th>
                 <select id="orderStatus" name="orderStatus" data-toggle="select" class="sepe form-control select select-primary">
-                    <option value="" ${status == '' ? 'selected' : ''}><f:message key="order.status"/></option>
+                    <option value="" ${status == '' ? 'selected' : ''}><f:message key="order.list.status"/></option>
                     <option value="1" ${status == '1' ? 'selected' : ''}><f:message key="order.status1"/></option>
                     <option value="2" ${status == '2' ? 'selected' : ''}><f:message key="order.status2"/></option>
                     <option value="3" ${status == '3' ? 'selected' : ''}><f:message key="order.status3"/></option>

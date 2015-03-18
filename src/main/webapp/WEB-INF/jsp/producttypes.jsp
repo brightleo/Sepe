@@ -16,7 +16,7 @@
         <div class="css-form-header">
             <h3><f:message key="producttype"/></h3>
         </div>
-        <div id="html">
+        <div id="html" class="sepe-tree">
             <ul>
                 <li id="rootproduct" data-jstree='{ "opened" : true }'><f:message key="producttype.root"/>
                     <ul>
@@ -33,9 +33,11 @@
                 </li>
             </ul>
         </div>
-        <div class="css-form-footer">
-            <button id="save" type="submit"><f:message key="common.save"/></button>
-        </div>
+        <security:hasPermission name="order.edit">
+            <div class="css-form-footeform-group">
+                <button id="save" type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+            </div>
+        </security:hasPermission>
         <input type="hidden" id="producttype_value" name="producttype_value"/>
     </form>
 </div>

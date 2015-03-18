@@ -39,11 +39,11 @@
                 <li id="orde"><a href="${BASE}/orders"><f:message key="menu.order"/></a></li>
                 <li id="chart"><a href="${BASE}/charts"><f:message key="menu.chart"/></a></li>
                 <li id="custome"><a href="${BASE}/customers"><f:message key="menu.customer"/></a></li>
+                <li id="sal"><a href="${BASE}/salesman"><f:message key="menu.sales"/></a></li>
+                <li id="produc"><a href="${BASE}/productTypes"><f:message key="menu.product"/></a></li>
                 <security:hasRole name="admin">
                   <li id="use"><a href="${BASE}/users"><f:message key="menu.user"/></a></li>
-                  <li id="sal"><a href="${BASE}/salesman"><f:message key="menu.sales"/></a></li>
-                  <li id="produc"><a href="${BASE}/productTypes"><f:message key="menu.product"/></a></li>
-                 <li id="notic"><a href="${BASE}/notices"><f:message key="menu.notice"/></a></li>
+                  <li id="notic"><a href="${BASE}/notices"><f:message key="menu.notice"/></a></li>
                 </security:hasRole>
               </ul>
        </div><!--/.nav -->

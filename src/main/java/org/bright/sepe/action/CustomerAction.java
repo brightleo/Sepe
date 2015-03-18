@@ -18,7 +18,6 @@ import org.smart4j.framework.mvc.bean.View;
 import org.smart4j.plugin.security.annotation.HasRoles;
 
 @Action
-@HasRoles("admin")
 public class CustomerAction {
 
     @Inject
