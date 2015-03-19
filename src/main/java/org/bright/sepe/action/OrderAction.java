@@ -7,6 +7,7 @@ import java.util.Map;
 import org.bright.sepe.Constant;
 import org.bright.sepe.Tool;
 import org.bright.sepe.bean.OrderBean;
+import org.bright.sepe.bean.ProductTypeBean;
 import org.bright.sepe.entity.Customer;
 import org.bright.sepe.entity.OrderInfo;
 import org.bright.sepe.entity.ProductType;
@@ -41,10 +42,12 @@ public class OrderAction {
         int pageSize = Tool.getPageSize("order_pager");
         String name = "";
         String status = "";
+        String product = "";
         String sort = "desc";
-        Pager<OrderBean> orderBeanPager = orderService.getOrderBeanPager(pageNumber, pageSize, name, status, sort);
+        List<ProductTypeBean> productTypeList = orderService.getProductTypeList();
+        Pager<OrderBean> orderBeanPager = orderService.getOrderBeanPager(pageNumber, pageSize, name, product, status, sort);
         return new View("order.jsp")
-            .data("orderBeanPager", orderBeanPager).data("order", sort);
+            .data("orderBeanPager", orderBeanPager).data("order", sort).data("products",productTypeList);
     }
 
     @Request.Post("/order/search")
@@ -54,7 +57,8 @@ public class OrderAction {
         String name = params.getString("name");
         String orderby = params.getString("orderby");
         String status = params.getString("status");
-        Pager<OrderBean> orderBeanPager = orderService.getOrderBeanPager(pageNumber, pageSize, name, status, orderby);
+        String product = params.getString("products");;
+        Pager<OrderBean> orderBeanPager = orderService.getOrderBeanPager(pageNumber, pageSize, name, product, status, orderby);
         return new View("order_list.jsp")
             .data("orderBeanPager", orderBeanPager).data("order", orderby).data("status",status);
     }

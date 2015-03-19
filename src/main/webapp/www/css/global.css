@@ -29,11 +29,20 @@
 .css-width-200 {
     width: 200px !important;
 }
+.css-width-400 {
+    width: 400px !important;
+}
 .css-blank-10 {
     display: inline-block;
     width: 10px;
 }
-
+.sepe-search {
+    display: inline-block;
+    width: 100%;
+}
+.sepe.input-group {
+    width: 260px;
+}
 .css-row {
     clear: both;
     height: 30px;
@@ -82,9 +91,6 @@
 }
 .table-pager {
     margin-top: 10px;
-}
-.sepe-search {
-    width: 450px;
 }
 .sepe-form.navbar-form {
     padding-left: 0;

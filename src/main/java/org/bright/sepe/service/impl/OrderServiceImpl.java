@@ -104,10 +104,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Pager<OrderBean> getOrderBeanPager(int pageNumber, int pageSize, String param, String status, String orderby) {
-        String condition = "(name like ? or sub_product_type like ? or salesman like ? or customer like ? or customer_orderid like ? ) and status like ?";
+    public Pager<OrderBean> getOrderBeanPager(int pageNumber, int pageSize, String param, String product, String status, String orderby) {
+		String condition = "(name like ? or sub_product_type like ? or salesman like ? or customer like ? or customer_orderid like ? ) and status like ? and product_type like ?";
         String sort = "code " + orderby;
-        Object[] params = {"%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + status + "%"};
+        Object[] params = {"%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + param + "%", "%" + status + "%", "%" + product + "%"};
 
         long count = DataSet.selectCount(OrderInfo.class, condition, params);
         List<OrderBean> orderBeanList = new ArrayList<OrderBean>();

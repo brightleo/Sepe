@@ -50,4 +50,7 @@ $(function() {
     };
     $('.ext-order-delete').click(deleteFn);
     $(document).on('click', '.ext-order-delete', deleteFn);
+    $("#products").change(function() {
+        $('#order_search_form').submit();
+    });
 });

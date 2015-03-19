@@ -26,7 +26,7 @@ public interface OrderService {
 
     OrderBean getOrderBean(long id);
 
-    Pager<OrderBean> getOrderBeanPager(int pageNumber, int pageSize, String name, String status, String orderby);
+    Pager<OrderBean> getOrderBeanPager(int pageNumber, int pageSize, String name, String product, String status, String orderby);
 
     List<ProductType> getSubProductTypeList();
     
