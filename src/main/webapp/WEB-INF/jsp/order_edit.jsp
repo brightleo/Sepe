@@ -52,7 +52,7 @@
 		        <div class="form-group">
 		            <label for="customer"><f:message key="order.customer"/><span class="css-color-red">*</span>:</label>
 		            <div>
-			            <input type="text" id="customer" name="customer" value="${order.customer}" class="ext-required">
+			            <input type="text" id="customer" name="customer" maxlength="20" value="${order.customer}" class="ext-required">
 			            <input type="hidden" id="customerNames" name="customerNames" value='${customerNames}' />
 		            </div>
 		        </div>

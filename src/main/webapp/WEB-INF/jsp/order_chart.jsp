@@ -63,7 +63,9 @@
 			  </div>
 			</div>
 		</div>
-		<div class="form-group"><button id="doChart" class="btn"><f:message key="order.chart.do"/></button></div>
+		<div class="form-group css-right">
+			<button id="doChart" class="btn"><f:message key="order.chart.do"/></button>
+		</div>
         <div id="orderChart" class="sepe-chart"></div>
 	</form>
 </div>

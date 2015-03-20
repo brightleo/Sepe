@@ -44,12 +44,12 @@
                 <td><a href="${BASE}/order/view/${order.id}">${order.name}</a></td>
                 <td class="nonewline">${order.subProductType}</td>
                 <td class="nonewline">${order.salesman}</td>
-                <td>${order.customer}</td>
-                <td>${order.customerOrderid}</td>
-                <td>${order.orderamount}</td>
+                <td class="nonewline">${order.customer}</td>
+                <td class="nonewline">${order.customerOrderid}</td>
+                <td class="nonewline">${order.orderamount}</td>
                 <td class="nonewline">${order.orderdate}</td>
-                <td>${order.orderQuantity}</td>
-                <td><f:message key="order.status${order.status}"/></td>
+                <td class="nonewline">${order.orderQuantity}</td>
+                <td class="nonewline"><f:message key="order.status${order.status}"/></td>
                 <td>
                     <security:hasPermission name="order.edit">
                         <a href="${BASE}/order/edit/${order.id}"><span class="sepe-icon fui-new"></span></a>

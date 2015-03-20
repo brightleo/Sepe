@@ -26,7 +26,7 @@
         <div class="form-group">
             <label for="name"><f:message key="customer.name"/>:</label>
             <div> 
-            	<input type="text" id="name" name="name" class="ext-required">
+            	<input type="text" id="name" name="name" maxlength="20" class="ext-required">
             </div>
         </div>
         <div class="form-group">
