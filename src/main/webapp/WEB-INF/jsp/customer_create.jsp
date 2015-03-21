@@ -50,8 +50,9 @@
         </div>
 		<div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
-            <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
-            <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
+                <button type="button" id="back" class="btn btn-default css-right sepe-btn"><f:message key="common.back"/></button>
+                <button type="submit" class="btn btn-default css-right sepe-btn"><f:message key="common.save"/></button>
+              </div>
           </div>
         </div>
     </form>

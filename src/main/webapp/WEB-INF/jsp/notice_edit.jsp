@@ -17,7 +17,7 @@
 <%@ include file="common/header.jsp" %>
     <form id="notice_edit_form" class="form-horizontal">
         <div class="css-form-header">
-            <h3><f:message key="notice.edit_notice"/></h3>
+            <h6><f:message key="notice.edit_notice"/></h6>
         </div>
         <div class="form-group">
             <label for="title"><f:message key="notice.title"/>:</label>
@@ -67,10 +67,10 @@
         </div>
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
+            <button type="button" id="back" class="btn btn-default css-right sepe-btn"><f:message key="common.back"/></button>
             <security:hasPermission name="order.edit">
-                    <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+                <button type="submit" class="btn btn-default css-right sepe-btn"><f:message key="common.save"/></button>
             </security:hasPermission>
-            <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
           </div>
         </div>
     </form>

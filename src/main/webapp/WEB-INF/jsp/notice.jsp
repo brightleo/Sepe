@@ -17,26 +17,32 @@
     <div id="main">
         <div class="css-panel">
             <div class="css-panel-header">
-                <h3><f:message key="notice.list"/></h3>
+                <h6><f:message key="notice.list"/></h6>
             </div>
             <div class="css-panel-content">
-                <div class="css-row">
-                    <div class="css-left">
-                        <form id="notice_search_form" class="sepe-form navbar-form">
-                            <div class="form-group sepe-search">
-                                <div class = "input-group">
+                <div>
+                    <form id="notice_search_form" class="sepe-form navbar-form">
+                        <table style="width:100%;">
+                            <tr>
+                                <td>
+                                  <div class = "sepe input-group">
                                     <input type="text" name="param" class="form-control" type="search">
                                     <input type="hidden" name="type" id="type" class="form-control" value="">
-                                    <span class="input-group-btn">
-                                      <button type="submit" id="search" class="btn"><span class="fui-search"></span></button>
-                                    </span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="css-right">
-                        <a href="${BASE}/notice"><f:message key="notice.create_notice"/></a>
-                    </div>
+                                        <span class="input-group-btn">
+                                          <button type="submit" id="search" class="btn"><span class="fui-search"></span></button>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="css-right">
+                                        <security:hasPermission name="order.create">
+                                            <a href="${BASE}/notice"><f:message key="notice.create_notice"/></a>
+                                        </security:hasPermission>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
                 <div id="notice_list">
                     <%@ include file="notice_list.jsp" %>

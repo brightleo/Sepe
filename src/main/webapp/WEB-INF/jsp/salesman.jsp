@@ -14,7 +14,7 @@
 <%@ include file="common/header.jsp" %>
     <form id="salesman_form" class="form-horizontal">
         <div class="css-form-header">
-            <h3><f:message key="salesman.list"/></h3>
+            <h6><f:message key="salesman.list"/></h6>
         </div>
 		<div id="tabs3" class="form-group">
 			<table id="forCopyTable" style="display:none">
@@ -42,8 +42,8 @@
 		</div>
 		<div class="form-group">
             <security:hasPermission name="order.edit">
-            	<button type="button" id="add" class="btn btn-default"><f:message key="common.add"/></button>
-                <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+                <button type="submit" class="btn btn-default css-right sepe-btn"><f:message key="common.save"/></button>
+            	<button type="button" id="add" class="btn btn-default css-right sepe-btn"><f:message key="common.add"/></button>
             </security:hasPermission>
         </div>
     </form>

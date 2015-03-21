@@ -33,7 +33,7 @@
                     <option value="0" ${status == '0' ? 'selected' : ''}><f:message key="order.status0"/></option>
                 </select>
             </th>
-            <th class="css-width-75"><f:message key="common.action"/></th>
+            <th class="css-width-25"></th>
         </tr>
     </thead>
     <tbody>

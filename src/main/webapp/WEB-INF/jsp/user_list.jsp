@@ -26,7 +26,7 @@
                 </td>
                 <td>
                     <c:forEach var="permission" items="${permissionList}" varStatus="stauts">
-                        ${permission.permissionName}<c:if test="${not stauts.last}">, </c:if>
+                        <f:message key="role.${permission.permissionName}"/><c:if test="${not stauts.last}">, </c:if>
                     </c:forEach>
                 </td>
                 <td>

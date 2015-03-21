@@ -17,7 +17,7 @@
 <%@ include file="common/header.jsp" %>
     <form id="order_edit_form" class="form-horizontal">
         <div class="css-form-header">
-            <h3><f:message key="order.edit_order"/></h3>
+            <h6><f:message key="order.edit_order"/></h6>
         </div>
         <div id="sepetabs">
 	        <ul> 
@@ -121,7 +121,7 @@
 		        </div>
 		  	</div>
 			<div id="tabs2">
-				<button type="button" id="add"><f:message key="common.add"/></button>
+				<button type="button" id="add" class="btn btn-default btn-xs css-right sepe-btn"><f:message key="common.add"/></button>
 				<table id="forCopyTable" style="display:none">
 					<tr>
 			            <td><input type="text" id="shipmentcode" name="shipmentcode" /></td>
@@ -134,7 +134,7 @@
 			            <td><input type="text" id="billingProductName" name="billingProductName"  /></td>
 			            <td><input type="text" id="billingQuantity" name="billingQuantity"  /></td>
 			            <td><input type="text" id="billingUnitprice" name="billingUnitprice"  /></td>
-			            <td><button type="button" id="delete"><f:message key="common.delete"/></button></td>
+			            <td><a href="#" id="delete"><span class="fui-cross"></span></a></td>
 			        </tr>
 				</table>
 				<div class="tab tab-size-small sepe-table">
@@ -167,7 +167,7 @@
 					            <td><input type="text" id="billingProductName${status.index}" name="billingProductName${status.index}"  value="${subOrder.billingProductName}"/></td>
 					            <td><input type="text" id="billingQuantity${status.index}" name="billingQuantity${status.index}"  value="${subOrder.billingQuantity}"/></td>
 					            <td><input type="text" id="billingUnitprice${status.index}" name="billingUnitprice${status.index}"  value="${subOrder.billingUnitprice}"/></td>
-					            <td><button type="button" id="delete${status.index}"><f:message key="common.delete"/></button></td>
+					            <td><a href="#" id="delete${status.index}"><span class="fui-cross"></span></a></td>
 					        </tr>
 	                     </c:forEach>
 					    </tbody>
@@ -187,13 +187,13 @@
 				</table>
 			</div>
 			<div id="tabs3">
-				<button type="button" id="addfortab3"><f:message key="common.add"/></button>
+				<button type="button" id="addfortab3" class="btn btn-default btn-xs css-right sepe-btn"><f:message key="common.add"/></button>
 				<table id="forCopyTableFortab3" style="display:none">
 					<tr>
 			            <td><input type="text" id="tosectionDate" name="tosectiondate" readonly="true" class="sepe-date css-readonly"/></td>
 			            <td><input type="text" id="tosectionAmount" name="tosectionAmount" /></td>
 			            <td><input type="text" id="tosectionComment" name="tosectionComment" /></td>
-			            <td><button type="button" id="deleteFortab3"><f:message key="common.delete"/></button></td>
+			            <td><a href="#" id="deleteFortab3"><span class="fui-cross"></span></a></td>
 			        </tr>
 				</table>
 				<div class="tab sepe-table">
@@ -212,7 +212,7 @@
 					            	<td><input type="text" id="tosectiondate${status.index}" name="tosectiondate${status.index}" value="${tosection.tosectiondate}" class="sepe-date css-readonly" readonly="true" /></td>
 					            	<td><input type="text" id="tosectionAmount${status.index}" name="tosectionAmount${status.index}" value="${tosection.tosectionAmount}" /></td>
 					            	<td><input type="text" id="tosectionComment${status.index}" name="tosectionComment${status.index}" value="${tosection.tosectionComment}" /></td>
-					            	<td><button type="button" id="delete${status.index}"><f:message key="common.delete"/></button></td>
+					            	<td><a href="#" id="deleteFortab3${status.index}"><span class="fui-cross"></span></a></td>
 					        	 </tr>
 					         </c:forEach>
 					    </tbody>
@@ -229,8 +229,9 @@
         	</div>
 	        <div class="form-group">
 	          <div class="col-lg-offset-2 col-lg-10">
-	            <button type="submit" class="btn btn-default"><f:message key="common.save"/></button>
-	            <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
+	            <button type="button" id="back" class="btn btn-default css-right sepe-btn"><f:message key="common.back"/></button>
+	            <button type="submit" class="btn btn-default css-right sepe-btn"><f:message key="common.save"/></button>
+	          </div>
 	          </div>
 	        </div>
 	    </div>

@@ -8,14 +8,19 @@ $(function() {
 		} else {
 			var title = $("#chartTypeYear").val() + Smart.i18n('order.chart.year') + $("#chartTypeM").val() + Smart.i18n('order.chart.month');
 		}
-		if (type === "1"){
+		if (type === "1" || type==="4"){
 			var data =series;
 			var total = 0; $(data).map(function(){total += this[1];});
 			var arrLabels = $.makeArray($(data).map(function() {
 					return Math.round(this[1]/total * 100) + "%" + " (" + this[1]/10000  + Smart.i18n('order.chart.unit') + ")" ;
 				}));
+			var pieTitle = title + Smart.i18n('order.chart.type.pie');
+
+			if(type==="4") {
+				pieTitle = Smart.i18n('order.chart.type.nocomp');
+			}
 			var plot3 = jQuery.jqplot("orderChart", [data], {
-				title: title + Smart.i18n('order.chart.type.pie'),
+				title: pieTitle,
 				seriesDefaults:{
 				   renderer:$.jqplot.PieRenderer,
 				   rendererOptions: {
@@ -104,6 +109,8 @@ $(function() {
 
 	$("#chartType").change(function(){
 		var type = $(this).val();
+		$("#chart-search").show();
+		$("#orderChart").html("");
 		if(type === '1') {
 			$("label[id^='c_month']").show();
 			$("#c_amount").hide();
@@ -112,16 +119,18 @@ $(function() {
 			$("#c_amount").show();
 			$("label[id^='c_month']").show();
 			$("#c_salesman").hide();
-		} else {
+		} else if(type === '3'){
 			$("#chart_time_y").click();
 			$("#c_salesman").show();
 			$("label[id^='c_month']").hide();
 			$("#c_amount").hide();
+		} else if(type === '4'){
+			$("#chart-search").hide();
 		}
 
 	});
 	$("#doChart").click(function(){
-		$("#orderChart").html("");	
+		$("#orderChart").html("");
 	});
     $('#order_chart_form').ajaxForm({
     	async:false,

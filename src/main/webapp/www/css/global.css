@@ -15,6 +15,9 @@
 .footable {
 	border-radius: 4px;
 }
+.css-form-header {
+    font-weight: bold;
+}
 .css-width-25 {
     width: 25px !important;
 }
@@ -92,6 +95,7 @@
 }
 .table-pager {
     margin-top: 10px;
+    font-size: 0.875em;
 }
 .sepe-form.navbar-form {
     padding-left: 0;
@@ -103,6 +107,10 @@
 .container th,
 .nonewline {
 	white-space:nowrap;
+}
+.footable th,
+.footable th a {
+    font-size: 16px;
 }
 .sepe-table td {
 	font-size: 14px;
@@ -185,4 +193,8 @@ form.form-horizontal {
     margin-bottom: 10px;
     background-color: gainsboro;
     border-radius: 4px;
+}
+.sepe-btn {
+    margin: 8px;
+    font-size: 1em;
 }

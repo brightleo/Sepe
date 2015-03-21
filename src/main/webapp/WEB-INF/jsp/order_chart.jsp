@@ -16,7 +16,7 @@
 <%@ include file="common/header.jsp" %>
 	<form id="order_chart_form" class="form-horizontal">
         <div class="css-form-header">
-            <h3><f:message key="order.chart"/></h3>
+            <h6><f:message key="order.chart"/></h6>
         </div>
 		<div class="form-group">
 			<label for="chartType"><f:message key="order.chart.type"/>:</label>
@@ -25,10 +25,11 @@
 			     	<option value="1"><f:message key="order.chart.type.pie"/></option>
 			     	<option value="2"><f:message key="order.chart.type.bar"/></option>
 			     	<option value="3"><f:message key="order.chart.type.line"/></option>
+			     	<option value="4"><f:message key="order.chart.type.nocomp"/></option>
 			    </select>
 			</div>
 		</div>
-		<div class="form-group">
+		<div id="chart-search" class="form-group">
 			<label><f:message key="order.chart.filter"/>:</label>
 			<div class="row">
 				<div class="col-xs-3">
@@ -64,7 +65,7 @@
 			</div>
 		</div>
 		<div class="form-group css-right">
-			<button id="doChart" class="btn"><f:message key="order.chart.do"/></button>
+			<button id="doChart" class="btn btn-success"><f:message key="order.chart.do"/></button>
 		</div>
         <div id="orderChart" class="sepe-chart"></div>
 	</form>

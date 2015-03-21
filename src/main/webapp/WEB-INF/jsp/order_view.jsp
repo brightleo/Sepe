@@ -17,7 +17,7 @@
 <%@ include file="common/header.jsp" %>
     <form class="form-horizontal">
         <div class="css-form-header">
-            <h3><f:message key="order.view_order"/></h3>
+            <h6><f:message key="order.view_order"/></h6>
         </div>
         <div id="sepetabs">
 	        <ul> 
@@ -176,7 +176,7 @@
 			</div>
 	        <div class="form-group">
 	          <div class="col-lg-offset-2 col-lg-10">
-	            <button type="button" id="back" class="btn btn-default"><f:message key="common.back"/></button>
+	            <button type="button" id="back" class="btn btn-default css-right sepe-btn"><f:message key="common.back"/></button>
 	          </div>
 	        </div>
         </div>

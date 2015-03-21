@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.cxf.common.util.StringUtils;
 import org.bright.sepe.bean.UserBean;
 import org.bright.sepe.entity.Customer;
 import org.bright.sepe.entity.Permission;
@@ -91,6 +92,9 @@ public class UserServiceImpl implements UserService {
 
         long userId = insertUser(username, password);
         String roleIdStr = CastUtil.castString(fieldMap.get("roleId"));
+        if(StringUtils.isEmpty(roleIdStr)) {
+        	roleIdStr = "2";
+        }
         insertUserRole(userId, roleIdStr);
         return true;
     }

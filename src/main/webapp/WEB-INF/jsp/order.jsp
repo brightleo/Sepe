@@ -17,7 +17,7 @@
     <div id="main">
         <div class="css-panel">
             <div class="css-panel-header">
-                <h3><f:message key="order.order_list"/></h3>
+                <h6><f:message key="order.order_list"/></h6>
             </div>
             <div class="css-panel-content">
                 <div>

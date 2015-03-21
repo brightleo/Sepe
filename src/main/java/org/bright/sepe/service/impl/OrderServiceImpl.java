@@ -215,8 +215,11 @@ public class OrderServiceImpl implements OrderService {
 			String salesman = fieldMap.get("salesman").toString();
 			String sql = SqlHelper.getSql("SELECT_ORDER_Y_GROUP_BY_MON");
 			sumList = DatabaseHelper.queryArrayList(sql, year, salesman);
+		} else if (chartType == 4) {
+			String sql = SqlHelper.getSql("SELECT_ORDER_NOCOMPLETE_GROUP_BY_TYPE");
+			sumList = DatabaseHelper.queryArrayList(sql);
 		}
-		
+
 		return ConvertUtils.ConvertForChart(sumList);
 	}
 	

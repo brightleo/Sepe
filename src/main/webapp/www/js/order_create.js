@@ -74,7 +74,7 @@ $(function() {
 	    });
 	    $("#tosectiontable > tbody").append(tr);
     });
-    $("button[id^=delete]").click(function() {
+    $("a[id^=delete]").click(function() {
     	var isTabs2 = $(this).closest("div#tabs2");
     	$(this).closest("tr").remove();
     	if(isTabs2.length > 0){

@@ -14,7 +14,7 @@
 <%@ include file="common/header.jsp" %>
     <form id="producttype_form" class="css-form">
         <div class="css-form-header">
-            <h3><f:message key="producttype"/></h3>
+            <h6><f:message key="producttype"/></h6>
         </div>
         <div id="html" class="sepe-tree">
             <ul>
@@ -35,7 +35,7 @@
         </div>
         <security:hasPermission name="order.edit">
             <div class="css-form-footeform-group">
-                <button id="save" type="submit" class="btn btn-default"><f:message key="common.save"/></button>
+                <button id="save" type="submit" class="btn btn-default css-right sepe-btn"><f:message key="common.save"/></button>
             </div>
         </security:hasPermission>
         <input type="hidden" id="producttype_value" name="producttype_value"/>
