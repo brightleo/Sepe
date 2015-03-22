@@ -42,10 +42,13 @@
 		            <label for="productType"><f:message key="order.product_type"/>:</label>
 		            <div>
 			            <select id="productType" name="productTypeId" data-toggle="select" class="form-control select select-default">
-			                <c:forEach var="productType" items="${productTypeList}">
-			                    <c:set var="displayName" value='${productType.parentname} - ${productType.name}'  />
-			                    <option value="${productType.id}" ${order.subProductType == productType.name ? 'selected' : ''}>${displayName}</option>
-			                </c:forEach>
+	                        <c:forEach var="productTypeBean" items="${productTypeList}">
+		                        <optgroup label="${productTypeBean.productType.name}">
+		                        	<c:forEach var="subProductType" items="${productTypeBean.productTypeList}">
+		                        		<option value="${subProductType.id}" ${order.subProductType == subProductType.name ? 'selected' : ''}>${subProductType.name}</option>
+		                        	</c:forEach>
+		                        </optgroup>
+	                        </c:forEach>
 			            </select>
 		            </div>
 		        </div>
@@ -241,7 +244,7 @@
 <%@ include file="common/footer.jsp" %>
 
 <%@ include file="common/script.jsp" %>
-<link rel="stylesheet" href="${BASE}/www/lib/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css"">
+<link rel="stylesheet" href="${BASE}/www/lib/jquery-ui/css/hot-sneaks/jquery-ui-1.10.4.custom.min.css"">
 <script type="text/javascript" src="${BASE}/www/lib/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
 <script type="text/javascript" src="${BASE}/www/js/order_edit.js"></script>
 </body>

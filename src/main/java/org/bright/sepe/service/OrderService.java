@@ -40,5 +40,5 @@ public interface OrderService {
 
     List<Tosection> getTosectionList(String code);
     
-    Object[][] getChartInfo(Map<String, Object> fieldMap);
+    Object[] getChartInfo(Map<String, Object> fieldMap);
 }

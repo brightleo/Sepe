@@ -65,13 +65,13 @@ public class OrderAction {
     @HasPermissions("order.create")
     @Request.Get("/order/create")
     public View create() {
-        List<ProductType> productTypeList = orderService.getSubProductTypeList();
+    	List<ProductTypeBean> productTypeList = orderService.getProductTypeList();
         List<Salesman> salesmanList = userService.findSalesmanList();
         List<Customer> customerList = userService.findCustomerList();
         String customerNames = ConvertUtils.ConvertToJsonDataForCustomer(customerList);
         List<SubOrder> subOrderList = new ArrayList<SubOrder>();
         return new View("order_create.jsp")
-            .data("productTypeList", productTypeList)
+        	.data("productTypeList", productTypeList)
             .data("subOrderList", subOrderList)
             .data("salesmanList",salesmanList)
             .data("customerNames",customerNames);
@@ -110,13 +110,14 @@ public class OrderAction {
     @HasPermissions("order.edit")
     @Request.Get("/order/edit/{id}")
     public View edit(long id) {
-        List<ProductType> productTypeList = orderService.getSubProductTypeList();
+    	List<ProductTypeBean> productTypeList = orderService.getProductTypeList();
+        List<ProductType> subProductTypeList = orderService.getSubProductTypeList();
         List<Salesman> salesmanList = userService.findSalesmanList();
         OrderBean orderBean = orderService.getOrderBean(id);
         List<Customer> customerList = userService.findCustomerList();
         String customerNames = ConvertUtils.ConvertToJsonDataForCustomer(customerList);
         return new View("order_edit.jsp")
-            .data("productTypeList", productTypeList)
+	    	.data("productTypeList", productTypeList)
             .data("orderBean", orderBean)
             .data("salesmanList",salesmanList)
             .data("customerNames",customerNames);
@@ -137,7 +138,7 @@ public class OrderAction {
     }
     @Request.Post("/chart/json")
     public Result getChartInfo(Params params) {
-    	Object[][] chartObjs = orderService.getChartInfo(params.getFieldMap());
+    	Object[] chartObjs = orderService.getChartInfo(params.getFieldMap());
     	Result result = new Result(true);
     	result.setData(chartObjs);
         return result;

@@ -191,6 +191,29 @@ public class ConvertUtils {
 		}
 		return chartObjs;
 	}
+	
+	public static Object[] ConvertToObject(Object[][] charts1, Object[][] charts2) {
+		Object[] objs = new Object[2];
+		objs[0] = charts1;
+		if (charts2 != null) {
+			objs[1] = charts2;
+		}
+		return objs;
+	}
+
+	public static void ConvertToList(List<Object[]> chartList, List<Object[]> list1, List<Object[]> list2) {
+		for (Object[] charts : chartList) {
+			Object[] chart1 = new Object[2];
+			Object[] chart2 = new Object[2];
+			chart1[0] = charts[0];
+			chart2[0] = charts[0];
+			chart1[1] = charts[1];
+			chart2[1] = charts[2];
+			list1.add(chart1);
+			list2.add(chart2);
+		}
+	}
+
 	public static Object[][] ConvertForNotice(List<Object[]> noticeList) {
 		int size = noticeList.size();
 		Object[][] noticeObjs = new Object[noticeList.size()][2];

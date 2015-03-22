@@ -30,7 +30,6 @@
                     </c:forEach>
                 </td>
                 <td>
-                    <a href="${BASE}/user/${user.id}"><span class="sepe-icon fui-new"></a>
                     <a href="${BASE}/user/${user.id}" class="ext-user-delete"><span class="sepe-icon fui-cross-circle"></a>
                 </td>
             </tr>

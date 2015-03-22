@@ -177,7 +177,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Object[][] getChartInfo(Map<String, Object> fieldMap) {
+	public Object[] getChartInfo(Map<String, Object> fieldMap) {
 		int chartType = Integer.parseInt(fieldMap.get("chartType").toString());
 		Object year = fieldMap.get("chartTypeYear");
 		Object mon = fieldMap.get("chartTypeM");
@@ -215,12 +215,15 @@ public class OrderServiceImpl implements OrderService {
 			String salesman = fieldMap.get("salesman").toString();
 			String sql = SqlHelper.getSql("SELECT_ORDER_Y_GROUP_BY_MON");
 			sumList = DatabaseHelper.queryArrayList(sql, year, salesman);
+			List<Object[]> list1 = new ArrayList<Object[]>();
+			List<Object[]> list2 = new ArrayList<Object[]>();
+			ConvertUtils.ConvertToList(sumList, list1, list2);
+			return ConvertUtils.ConvertToObject(ConvertUtils.ConvertForChart(list1), ConvertUtils.ConvertForChart(list2)); 
 		} else if (chartType == 4) {
 			String sql = SqlHelper.getSql("SELECT_ORDER_NOCOMPLETE_GROUP_BY_TYPE");
 			sumList = DatabaseHelper.queryArrayList(sql);
 		}
-
-		return ConvertUtils.ConvertForChart(sumList);
+		return ConvertUtils.ConvertToObject(ConvertUtils.ConvertForChart(sumList), null);
 	}
 	
 	private boolean isNotEmpty(Object o) {

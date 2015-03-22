@@ -2,7 +2,8 @@ $(function() {
 	function onDataReceived(result) {
 		var type = $("#chartType").val();
 		var time_type = $("input[name='chart_time'][type='radio']:checked").val();
-		var series = result.data;
+		var chartData = result.data;
+		var series = chartData[0];
 		if (time_type === '0') {
 			var title = $("#chartTypeYear").val() + Smart.i18n('order.chart.year');
 		} else {
@@ -62,19 +63,20 @@ $(function() {
 			});
 
 		} else {
-			var plot2 = $.jqplot('orderChart', [series], {
+			var plot2 = $.jqplot('orderChart', [series,chartData[1]], {
 				title: $("#chartTypeYear").val() + Smart.i18n('order.chart.type.line'),
 				seriesDefaults: { 
 			        showMarker:false,
 			        pointLabels: { show:true } 
 			    },
-				series:[{xaxis:'xaxis', yaxis:'yaxis'}],
+				
 				axesDefaults: {
 				    tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
 				    tickOptions: {
 				      fontSize: '10pt'
 				    }
 				},
+				series: [{ label: Smart.i18n('order.chart.order') }, { label: Smart.i18n('order.chart.billing') }],
 				axes: {
 				 xaxis: {
 			        renderer: $.jqplot.CategoryAxisRenderer
@@ -82,6 +84,10 @@ $(function() {
 			      yaxis: {
 			        tickOptions: {formatString: '%.2f'+ Smart.i18n('order.chart.unit')}
 			      }
+				},
+				legend: {
+					show: true,
+					placement: 'outsideGrid'
 				}
 			});
 		}

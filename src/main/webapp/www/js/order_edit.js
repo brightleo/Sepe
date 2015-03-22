@@ -100,7 +100,7 @@ $(function() {
         },
         success: function(result) {
             if (result.success) {
-                location.href = BASE + '/orders';
+                alert(Smart.i18n('common.save.success'));
             }
         }
     });

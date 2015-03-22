@@ -115,6 +115,9 @@
 .sepe-table td {
 	font-size: 14px;
 }
+.ui-tabs.ui-widget {
+    font-size: 1em;
+}
 .tab.sepe-table th {
 	font-size: 12px;
 }
@@ -181,7 +184,11 @@ form.form-horizontal {
 .select2-with-searchbox.select2-drop-active {
     min-width: 0px;
 }
-
+.select2-drop .select2-result-with-children > .select2-result-label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: cadetblue;
+}
 .sepe-chart {
     height:600px;
     width:900px;

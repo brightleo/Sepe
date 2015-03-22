@@ -20,8 +20,9 @@
     <a class="navbar-brand" href="#"><f:message key="common.title"/></a>
   </div>
   <div id="bs-example-navbar-collapse-15" class="collapse navbar-collapse">
+      <button class="btn btn-default navbar-btn btn-xs css-right" type="button" id="logout" style="margin-left:8px;"><f:message key="common.logout"/></button>
     <p class="navbar-text navbar-right"><f:message key="common.user"/>: <security:principal/><a id="showNotice" href="javascript:void(0);"><span id="hasNotice"/></a></p>
-    <button class="btn btn-default navbar-btn btn-xs" type="button" id="logout"><f:message key="common.logout"/></button>
+
 </nav>
 <div class="row">
   <div class="col-md-12">
