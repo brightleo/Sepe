@@ -15,7 +15,8 @@
 .footable {
 	border-radius: 4px;
 }
-.css-form-header {
+.css-panel-header h6,
+.css-form-header h6 {
     font-weight: bold;
 }
 .css-width-25 {
@@ -177,12 +178,15 @@ form.form-horizontal {
     color: #fff;
 }
 
-.jGrowl-notification.sepe,
-.jGrowl-closer {
-    background-color: black;
+.jGrowl-notification.sepe {
+    background-color: #ffff38;
     font-size: 1.25em;
+    color: black;
 }
 
+.jGrowl-closer {
+	background-color: #2f4154;
+}
 .jqplot-table-legend.jqplot-table-legend-swatch {
     padding-left: 0.75em;
 }

@@ -244,7 +244,7 @@
 <%@ include file="common/footer.jsp" %>
 
 <%@ include file="common/script.jsp" %>
-<link rel="stylesheet" href="${BASE}/www/lib/jquery-ui/css/hot-sneaks/jquery-ui-1.10.4.custom.min.css"">
+<link rel="stylesheet" href="${BASE}/www/lib/jquery-ui/css/hot-sneaks/jquery-ui-1.10.4.custom.min.css">
 <script type="text/javascript" src="${BASE}/www/lib/jquery-ui/js/jquery-ui-1.10.4.custom.min.js"></script>
 <script type="text/javascript" src="${BASE}/www/js/order_edit.js"></script>
 </body>

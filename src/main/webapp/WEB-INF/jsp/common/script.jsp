@@ -24,7 +24,7 @@
                 success: function(result) {
                     var notices = result.data;
                     var noticeSize = notices.length;
-
+                    $.jGrowl.defaults.closerTemplate = '<div>' + Smart.i18n('common.close.all') + '</div>';
                     if (noticeSize > 0 ) {
                         $("span#hasNotice").addClass("badge").text(noticeSize).before("<span class='fui-mail'>");
                         $("a#showNotice").click(function(){
