@@ -12,7 +12,7 @@
 
 <div class="container">
 <%@ include file="common/header.jsp" %>
-    <form id="salesman_form" class="form-horizontal">
+    <form id="salesman_form">
         <div class="css-form-header">
             <h6><f:message key="salesman.list"/></h6>
         </div>

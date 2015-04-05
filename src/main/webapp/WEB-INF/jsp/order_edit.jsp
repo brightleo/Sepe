@@ -29,7 +29,7 @@
 		        <div class="form-group">
 		            <label for="code"><f:message key="order.code"/><span class="css-color-red">*</span>:</label>
 		            <div>
-		            	<input type="text" id="code" name="code" value="${order.code}" readonly class="css-readonly"/>
+		            	<input type="text" id="code" name="code" value="${order.code}" class="ext-required"/>
 		            </div>
 		        </div>
 		        <div class="form-group">

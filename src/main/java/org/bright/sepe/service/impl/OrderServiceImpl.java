@@ -64,16 +64,18 @@ public class OrderServiceImpl implements OrderService {
     public boolean updateOrder(long id, Map<String, Object> fieldMap, Multipart multipart) {
         fieldMap = setProductTypeInfoToMap(fieldMap);
         Map<String, Object> orderMap = ConvertUtils.ConvertFromMapToOrderInfo(fieldMap);
+        OrderInfo oldOrder = DataSet.select(OrderInfo.class, "id = ?", id);
+        String oldCode = oldOrder.getCode();
         boolean result = DataSet.update(OrderInfo.class, orderMap, "id = ?", id);
 
         List<Map<String, Object>> subOrderList = ConvertUtils.ConvertFromMapToSubOrderList(fieldMap);
-        DataSet.delete(SubOrder.class, "code = ?", orderMap.get("code"));
+        DataSet.delete(SubOrder.class, "code = ?", oldCode);
         for (Map<String, Object> map : subOrderList) {
         	result = DataSet.insert(SubOrder.class, map);
         }
 
         List<Map<String, Object>> tosectionList = ConvertUtils.ConvertFromMapToTosectionList(fieldMap);
-        DataSet.delete(Tosection.class, "code = ?", orderMap.get("code"));
+        DataSet.delete(Tosection.class, "code = ?", oldCode);
         for (Map<String, Object> map : tosectionList) {
         	result = DataSet.insert(Tosection.class, map);
         }

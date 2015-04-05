@@ -46,6 +46,12 @@
 .sepe.input-group {
     width: 260px;
 }
+.sepe.input-group button.btn {
+    background-color: #BDC3C7;
+}
+.sepe.input-group button.btn .fui-search{
+    color: whitesmoke;
+}
 .css-row {
     clear: both;
     height: 30px;
@@ -84,6 +90,9 @@
     border: 1px solid transparent;
     margin-left: -5px;
     width: 40px;
+}
+.css-color-red {
+	color: red;
 }
 .page-txt {
 	border-radius: 2px;
